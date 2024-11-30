@@ -26,7 +26,13 @@ $ ansible-galaxy init roles/ROLE_NAME # or make role ROLE_NAME
 - Ping Ansible
 
 ```sh
-$ ansible -i inventory/all.yml all -m ping # or make ping
+$ ansible -i inventory/hosts all -m ping # or make ping
+```
+
+- Check Diff After Running Playbook
+
+```sh
+$ ansible-playbook -i inventory/hosts site.yml --check --diff
 ```
 
 # Ref
