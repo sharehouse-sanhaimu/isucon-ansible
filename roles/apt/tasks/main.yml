@@ -11,4 +11,7 @@
       - git # ソースコード管理ツール
       - vim # エディタ
       - make # ビルドツール
+      - curl # HTTPクライアント
+      - wget # HTTPクライアント
     update_cache: true # same as apt-get update
+    upgrade: dist # same as apt-get upgrade
