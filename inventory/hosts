@@ -2,3 +2,6 @@
 proxmox_vm:
   hosts:
     hnz.house:
+proxmox_lxc:
+  hosts:
+    ansible.lxc:
