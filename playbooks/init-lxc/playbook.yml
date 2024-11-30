@@ -1,5 +1,5 @@
 ---
-- name: Initialize VM
-  hosts: proxmox_vm
+- name: Initialize LXC
+  hosts: proxmox_lxc
   roles:
     - apt # 必須のパッケージをインストール
