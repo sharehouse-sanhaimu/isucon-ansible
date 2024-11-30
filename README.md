@@ -1,5 +1,5 @@
 
-- install ansible
+- install uv
 
 ```sh
 # On macOS and Linux.
@@ -8,8 +8,21 @@ $ source $HOME/.local/bin/env
 $ uv init
 ```
 
+- install conda
+
+```sh
+$ mkdir -p ~/miniconda3
+$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+$ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+$ rm ~/miniconda3/miniconda.sh
+```
+
 - create Ansible Role
 
 ```sh
 $ ansible-galaxy init roles/ROLE_NAME
 ```
+
+# Ref
+
+- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
