@@ -1,34 +1,18 @@
 # 自宅サーバーの構成管理用のAnsible
 
-- install uv
+## Ansible Roleの作成
 
 ```sh
-# On macOS and Linux.
-$ curl -LsSf https://astral.sh/uv/install.sh | sh
-$ source $HOME/.local/bin/env
-$ uv init
+$ make role ROLE_NAME=role_name
 ```
 
-- install conda
+## 接続先サーバーへの接続確認
 
 ```sh
-$ mkdir -p ~/miniconda3
-$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-$ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-$ rm ~/miniconda3/miniconda.sh
+$ make ping
 ```
 
-- create Ansible Role
-
-```sh
-$ ansible-galaxy init roles/ROLE_NAME # or make role ROLE_NAME
-```
-
-- Ping Ansible
-
-```sh
-$ ansible -i inventory/hosts all -m ping # or make ping
-```
+## Playbookの実行
 
 - Check Diff After Running Playbook with Tags
 
@@ -41,6 +25,12 @@ $ ansible-playbook -i inventory/hosts site.yml --check --diff --tags init-vm
 ```sh
 $ ansible-playbook -i inventory/hosts site.yml --tags init-vm
 ```
+
+## その他のドキュメント
+
+- [Ansible Command](docs/ansible-cmd.md)
+- [Install Conda](docs/install-conda.md)
+- [Install uv](docs/install-uv.md)
 
 # Ref
 
