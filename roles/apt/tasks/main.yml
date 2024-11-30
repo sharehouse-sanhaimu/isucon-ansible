@@ -1,7 +1,13 @@
 # SPDX-License-Identifier: MIT-0
 ---
 # tasks file for roles/common
-- name: Install debug tools
+- name: Apt Update and Upgrade
+  become: true
+  ansible.builtin.apt:
+    update_cache: true # same as apt-get update
+    upgrade: dist # same as apt-get upgrade
+
+- name: Install essential packages
   become: true
   ansible.builtin.apt:
     pkg:
@@ -13,5 +19,3 @@
       - make # ビルドツール
       - curl # HTTPクライアント
       - wget # HTTPクライアント
-    update_cache: true # same as apt-get update
-    upgrade: dist # same as apt-get upgrade
