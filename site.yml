@@ -1,0 +1,8 @@
+---
+- name: Initialize VM
+  import_playbook: playbooks/init-vm/playbook.yml
+  tags: init-vm
+
+- name: Initialize LXC
+  import_playbook: playbooks/init-lxc/playbook.yml
+  tags: init-lxc
