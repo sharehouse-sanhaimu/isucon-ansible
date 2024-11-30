@@ -20,7 +20,13 @@ $ rm ~/miniconda3/miniconda.sh
 - create Ansible Role
 
 ```sh
-$ ansible-galaxy init roles/ROLE_NAME
+$ ansible-galaxy init roles/ROLE_NAME # or make role ROLE_NAME
+```
+
+- Ping Ansible
+
+```sh
+$ ansible -i inventory/all.yml all -m ping # or make ping
 ```
 
 # Ref

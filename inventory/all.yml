@@ -1,0 +1,4 @@
+---
+proxmox_vm:
+  hosts:
+    hnz.house:

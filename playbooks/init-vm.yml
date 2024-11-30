@@ -1,0 +1,5 @@
+---
+- name: Initialize VM
+  hosts: localhost
+  roles:
+    - apt # 必須のパッケージをインストール
