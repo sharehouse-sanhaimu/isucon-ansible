@@ -29,10 +29,16 @@ $ ansible-galaxy init roles/ROLE_NAME # or make role ROLE_NAME
 $ ansible -i inventory/hosts all -m ping # or make ping
 ```
 
-- Check Diff After Running Playbook
+- Check Diff After Running Playbook with Tags
 
 ```sh
-$ ansible-playbook -i inventory/hosts site.yml --check --diff
+$ ansible-playbook -i inventory/hosts site.yml --check --diff --tags init-vm
+```
+
+- Apply Playbook with Tags
+
+```sh
+$ ansible-playbook -i inventory/hosts site.yml --tags init-vm
 ```
 
 # Ref
