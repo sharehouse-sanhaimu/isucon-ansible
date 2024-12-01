@@ -2,4 +2,4 @@
 - name: Initialize LXC
   hosts: proxmox_lxc
   roles:
-    - apt # 必須のパッケージをインストール
+    - basic-apt-package # 必須のパッケージをインストール
