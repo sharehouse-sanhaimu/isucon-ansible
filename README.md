@@ -3,7 +3,7 @@
 ## Envirionment
 
 - Python: 3.13.0
-- Ansible: 11.0.0
+- Ansible: 11.0.0, https://github.com/ansible/ansible
   - Ansible Core: 2.18.0
 
 ## Ansible Roleの作成
@@ -41,3 +41,4 @@ $ ansible-playbook -i inventory/hosts site.yml --tags init-vm
 # Ref
 
 - https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
+- https://docs.ansible.com/ansible/devel/command_guide/index.html
