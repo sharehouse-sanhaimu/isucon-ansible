@@ -1,5 +1,11 @@
 # 自宅サーバーの構成管理用のAnsible
 
+## Envirionment
+
+- Python: 3.13.0
+- Ansible: 11.0.0
+  - Ansible Core: 2.18.0
+
 ## Ansible Roleの作成
 
 ```sh
