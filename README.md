@@ -34,7 +34,7 @@ $ ansible-playbook -i inventory/hosts site.yml --tags init-vm
 
 ## その他のドキュメント
 
-- [Ansible Command](docs/ansible-cmd.md)
+- [Ansibleのコマンド例](docs/ansible-cmd.md)
 - [Install Conda](docs/install-conda.md)
 - [Install uv](docs/install-uv.md)
 

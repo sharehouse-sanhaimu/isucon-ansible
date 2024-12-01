@@ -1,6 +1,4 @@
-# Ansible Command
-
-Ansibleのコマンド例。
+# Ansibleのコマンド例
 
 - create Ansible Role
 
