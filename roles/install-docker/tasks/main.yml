@@ -1,3 +1,77 @@
-#SPDX-License-Identifier: MIT-0
+# SPDX-License-Identifier: MIT-0
 ---
 # tasks file for roles/install-docker
+- name: Install prerequisites for Docker repository
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - ca-certificates
+      - curl
+      - gnupg2
+      - lsb-release
+    autoremove: true
+
+- name: Disribution
+  ansible.builtin.debug:
+    msg: "{{ ansible_facts['distribution'] }}"
+
+- name: New add docker apt key for Ubuntu
+  become: true
+  ansible.builtin.get_url:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    dest: /etc/apt/keyrings/docker.asc
+    mode: '0644'
+    backup: true
+  when: ansible_facts['distribution'] == "Ubuntu"
+
+- name: Add docker apt repo for Ubuntu
+  become: true
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu {{ ansible_facts['distribution_release'] }} stable"
+    state: present
+  when: ansible_facts['distribution'] == "Ubuntu"
+
+- name: Update Apt cache
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Install a list of packages
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+      - docker-compose
+    force_apt_get: true # aptではなくapt-getを使う
+    install_recommends: true # 依存関係のパッケージのインストールを認める
+    update_cache: true
+    autoremove: true
+
+- name: Start and enable docker daemon
+  become: true
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Start and enable containerd daemon
+  become: true
+  ansible.builtin.service:
+    name: containerd
+    state: started
+    enabled: true
+
+- name: Ensure Docker Group exists
+  ansible.builtin.group:
+    name: docker
+    state: present
+
+- name: Add user to Docker Group
+  ansible.builtin.user:
+    name: "{{ ansible_facts['env']['USER'] }}"
+    groups: docker
+    append: true

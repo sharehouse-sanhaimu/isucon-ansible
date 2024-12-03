@@ -6,6 +6,7 @@
   ansible.builtin.apt:
     update_cache: true # same as apt-get update
     upgrade: dist # same as apt-get upgrade
+  when: apt_upgrade is true
 
 - name: Install essential packages
   become: true
@@ -19,3 +20,4 @@
       - make # ビルドツール
       - curl # HTTPクライアント
       - wget # HTTPクライアント
+    autoremove: true
