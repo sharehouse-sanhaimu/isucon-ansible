@@ -5,3 +5,7 @@ role:
 
 ping:
 	@ansible -i inventory/hosts all -m ping
+
+clean-branch:
+	@git remote prune origin
+	@git branch | xargs git branch -d
