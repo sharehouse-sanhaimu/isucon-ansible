@@ -32,6 +32,18 @@ $ ansible-playbook -i inventory/hosts site.yml --check --diff --tags init-vm
 $ ansible-playbook -i inventory/hosts site.yml --tags init-vm
 ```
 
+- Limit Host to apply Ansible Playbook
+
+```sh
+$ ansible-playbook -i inventory/hosts site.yml --limit {HOSTNAME}
+## Show All Ansible Facts
+
+```yaml
+- name: Print all available facts
+  ansible.builtin.debug:
+    var: ansible_facts
+```
+
 ## その他のドキュメント
 
 - [Ansibleのコマンド例](docs/ansible-cmd.md)
