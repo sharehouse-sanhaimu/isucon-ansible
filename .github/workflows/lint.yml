@@ -12,6 +12,6 @@ jobs:
 
       - name: Run ansible-lint
         uses: ansible/ansible-lint@main
-        # optional (see below):
         with:
           setup_python: "true"
+          working_directory: ${{ github.workspace }}
