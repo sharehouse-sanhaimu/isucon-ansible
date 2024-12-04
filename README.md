@@ -2,6 +2,7 @@
 
 ## Envirionment
 
+- Conda: 24.9.2
 - Python: 3.13.0
 - Ansible: 11.0.0, https://github.com/ansible/ansible
   - Ansible Core: 2.18.0
@@ -20,22 +21,20 @@ $ make ping
 
 ## Playbookの実行
 
-- Check Diff After Running Playbook with Tags
+### Roleの実行前に差分を確認
 
 ```sh
-$ ansible-playbook -i inventory/hosts site.yml --check --diff --tags init-vm
+$ make check-diff TAG_NAME={TAG_NAME} # Tagを指定して実行
+$ make check-diff HOST_NAME={HOST_NAME} # Hostを指定して実行
 ```
 
-- Apply Playbook with Tags
+### Roleの実行
 
 ```sh
-$ ansible-playbook -i inventory/hosts site.yml --tags init-vm
+$ make apply-role TAG_NAME={TAG_NAME} # Tagを指定して実行
+$ make apply-role HOST_NAME={HOST_NAME} # Hostを指定して実行
 ```
 
-- Limit Host to apply Ansible Playbook
-
-```sh
-$ ansible-playbook -i inventory/hosts site.yml --limit {HOSTNAME}
 ## Show All Ansible Facts
 
 ```yaml

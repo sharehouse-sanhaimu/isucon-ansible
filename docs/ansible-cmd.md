@@ -23,3 +23,9 @@ $ ansible-playbook -i inventory/hosts site.yml --check --diff --tags init-vm
 ```sh
 $ ansible-playbook -i inventory/hosts site.yml --tags init-vm
 ```
+
+- Limit Host to apply Ansible Playbook
+
+```sh
+$ ansible-playbook -i inventory/hosts site.yml --limit {HOSTNAME}
+```
