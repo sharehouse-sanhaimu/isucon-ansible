@@ -3,5 +3,5 @@
   hosts: proxmox_lxc
   roles:
     - {role: basic_apt_package, basic_apt_package_apt_upgrade: false}
-    - default-configs
-    - install-docker
+    - default_configs
+    - install_docker
