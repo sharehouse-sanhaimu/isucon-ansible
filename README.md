@@ -1,42 +1,43 @@
+[![ansible-lint](https://github.com/AobaIwaki123/ansible/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/AobaIwaki123/ansible/actions/workflows/lint.yml)
+
 # 自宅サーバーの構成管理用のAnsible
 
 ## Envirionment
 
+- Conda: 24.9.2
 - Python: 3.13.0
 - Ansible: 11.0.0, https://github.com/ansible/ansible
   - Ansible Core: 2.18.0
 
-## Ansible Roleの作成
+## Ansible Roleの雛形の作成
 
 ```sh
 $ make role ROLE_NAME=role_name
 ```
 
-## 接続先サーバーへの接続確認
+## 疎通確認
 
 ```sh
 $ make ping
 ```
 
-## Playbookの実行
+## Ansible Playbookの実行
 
-- Check Diff After Running Playbook with Tags
+### Roleの実行前に差分を確認
 
 ```sh
-$ ansible-playbook -i inventory/hosts site.yml --check --diff --tags init-vm
+$ make check-diff TAG_NAME={TAG_NAME} # Tagを指定して実行
+$ make check-diff HOST_NAME={HOST_NAME} # Hostを指定して実行
 ```
 
-- Apply Playbook with Tags
+### Roleの実行
 
 ```sh
-$ ansible-playbook -i inventory/hosts site.yml --tags init-vm
+$ make apply-role TAG_NAME={TAG_NAME} # Tagを指定して実行
+$ make apply-role HOST_NAME={HOST_NAME} # Hostを指定して実行
 ```
 
-- Limit Host to apply Ansible Playbook
-
-```sh
-$ ansible-playbook -i inventory/hosts site.yml --limit {HOSTNAME}
-## Show All Ansible Facts
+## Ansible Factsを全て表示するタスク
 
 ```yaml
 - name: Print all available facts
