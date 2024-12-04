@@ -8,7 +8,7 @@ role:
 ping:
 	@ansible -i inventory/hosts all -m ping
 
-syntax-check:
+lint:
 	@ansible-lint
 
 check-diff:

@@ -1,3 +1,14 @@
 # SPDX-License-Identifier: MIT-0
 ---
 # tasks file for roles/setup_exporter
+- name: Run Node Exporter
+  community.docker.docker_container:
+    name: node-exporter
+    image: prom/node-exporter:v1.8.2
+    restart: true
+    state: started
+    volumes:
+      - '/:/host:ro,rslave'
+    ports:
+      - '9100:9100'
+    command: '--path.rootfs=/host'
