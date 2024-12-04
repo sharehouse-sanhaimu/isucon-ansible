@@ -2,7 +2,12 @@
 name: ansible-lint
 run-name: Ansible Lint
 on:
-  push:
+  pull_request: 
+    branches: 
+      - master
+    paths:
+      - 'roles/**'
+      - 'playbooks/**'
 jobs:
   build:
     name: Ansible Lint # Naming the build is important to use it as a status check
