@@ -48,7 +48,6 @@
       - docker-compose
     force_apt_get: true # aptではなくapt-getを使う
     install_recommends: true # 依存関係のパッケージのインストールを認める
-    update_cache: true
     autoremove: true
 
 - name: Start and enable docker daemon
