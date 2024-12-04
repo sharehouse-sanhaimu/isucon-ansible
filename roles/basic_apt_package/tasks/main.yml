@@ -12,7 +12,7 @@
   become: true
   ansible.builtin.apt:
     pkg:
-      - htop # リソース管理コマンドtopより見やすい。井脇
+      - htop # リソース管理コマンドtopより見やすい。
       - nmap # ポートスキャンでポートの解放状況を確認できる
       - net-tools # (=netstat)tcpのコネクションやポートの解放状況、パケット統計が確認できる。
       - git # ソースコード管理ツール

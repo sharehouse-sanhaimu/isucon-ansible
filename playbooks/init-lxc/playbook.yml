@@ -2,7 +2,8 @@
 - name: Initialize LXC
   hosts: proxmox_lxc
   roles:
-    - {role: basic_apt_package, basic_apt_package_apt_upgrade: false}
+    - {role: basic_apt_package, basic_apt_package_apt_upgrade: true}
     - default_configs
     - install_docker
     - setup_exporter
+    - install_tailscale
