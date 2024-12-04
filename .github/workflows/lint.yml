@@ -20,3 +20,4 @@ jobs:
         with:
           setup_python: "true"
           working_directory: ${{ github.workspace }}
+          requirements_file: "requirements.yml"
