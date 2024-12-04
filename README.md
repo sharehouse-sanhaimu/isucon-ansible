@@ -1,3 +1,5 @@
+[![ansible-lint](https://github.com/AobaIwaki123/ansible/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/AobaIwaki123/ansible/actions/workflows/lint.yml)
+
 # 自宅サーバーの構成管理用のAnsible
 
 ## Envirionment
