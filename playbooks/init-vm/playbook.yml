@@ -2,4 +2,4 @@
 - name: Initialize VM
   hosts: proxmox_vm
   roles:
-    - basic-apt-package # 必須のパッケージをインストール
+    - basic_apt_package # 必須のパッケージをインストール
