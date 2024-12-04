@@ -21,6 +21,12 @@ $ make role ROLE_NAME=role_name
 $ make ping
 ```
 
+## Ansible Playbookの構文チェック
+
+```sh
+$ make syntax-check
+```
+
 ## Ansible Playbookの実行
 
 ### Roleの実行前に差分を確認

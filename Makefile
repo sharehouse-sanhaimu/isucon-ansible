@@ -8,6 +8,9 @@ role:
 ping:
 	@ansible -i inventory/hosts all -m ping
 
+syntax-check:
+	@ansible-lint
+
 check-diff:
 	@ansible-playbook -i inventory/hosts site.yml --check --diff --limit $(HOST_NAME) --tags $(TAG_NAME)
 
