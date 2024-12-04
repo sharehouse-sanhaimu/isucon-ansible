@@ -3,7 +3,7 @@ HOST_NAME ?= "all"
 TAG_NAME ?= "all"
 
 role:
-	@ansible-galaxy init roles/$(ROLE_NAME)
+	@cp -r roles/template roles/$(ROLE_NAME)
 
 ping:
 	@ansible -i inventory/hosts all -m ping
