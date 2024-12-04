@@ -7,19 +7,19 @@
 - Ansible: 11.0.0, https://github.com/ansible/ansible
   - Ansible Core: 2.18.0
 
-## Ansible Roleの作成
+## Ansible Roleの雛形の作成
 
 ```sh
 $ make role ROLE_NAME=role_name
 ```
 
-## 接続先サーバーへの接続確認
+## 疎通確認
 
 ```sh
 $ make ping
 ```
 
-## Playbookの実行
+## Ansible Playbookの実行
 
 ### Roleの実行前に差分を確認
 
@@ -35,7 +35,7 @@ $ make apply-role TAG_NAME={TAG_NAME} # Tagを指定して実行
 $ make apply-role HOST_NAME={HOST_NAME} # Hostを指定して実行
 ```
 
-## Show All Ansible Facts
+## Ansible Factsを全て表示するタスク
 
 ```yaml
 - name: Print all available facts
