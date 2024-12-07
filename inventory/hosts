@@ -1,8 +1,4 @@
 ---
-proxmox_vm:
+isucon-pro:
   hosts:
-    hnz.house:
-proxmox_lxc:
-  hosts:
-    ansible.lxc:
-    kotlin.lxc:
+    isucon-share:
