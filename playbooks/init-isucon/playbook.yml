@@ -1,0 +1,6 @@
+---
+- name: Initialize isucon
+  hosts: isucon-pro
+  roles:
+    - {role: basic_apt_package, basic_apt_package_apt_upgrade: true}
+    - install_docker
