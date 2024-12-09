@@ -1,7 +1,4 @@
 ---
-isucon-pro:
-  hosts:
-    isucon-share:
 isucon:
   hosts:
     isucon-14-1.isu:
