@@ -1,11 +1,20 @@
 # SPDX-License-Identifier: MIT-0
 ---
 # tasks file for roles/example
-- name: Copy id_ecdsa to user's home directory
+- name: Copy mysql.cnf to user's home directory
   ansible.builtin.copy:
-    src: files/id_ecdsa
-    dest: /{{ ansible_facts['env']['HOME'] }}/.ssh/id_ecdsa
+    src: files/etc/mysql/mysql.cnf
+    dest: /etc/mysql/mysql.cnf
     owner: "{{ ansible_facts['env']['USER'] }}"
     group: "{{ ansible_facts['env']['USER'] }}"
-    mode: '0600'
+    mode: '0644'
+    backup: true
+
+- name: Copy mysqld.cnf to user's home directory
+  ansible.builtin.copy:
+    src: files/etc/mysql/mysql.conf.d/mysqld.cnf
+    dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+    owner: "{{ ansible_facts['env']['USER'] }}"
+    group: "{{ ansible_facts['env']['USER'] }}"
+    mode: '0644'
     backup: true
