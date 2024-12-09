@@ -9,6 +9,10 @@
 - Ansible: 11.0.0, https://github.com/ansible/ansible
   - Ansible Core: 2.18.0
 
+## ISUCON周りのバイナリファイル
+
+- alp: 1.0.21
+
 ## Ansible Roleの雛形の作成
 
 ```sh

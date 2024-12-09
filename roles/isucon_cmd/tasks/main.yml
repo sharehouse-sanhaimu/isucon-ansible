@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/example
+- name: Copy alp
+  ansible.builtin.copy:
+    src: files/alp
+    dest: /usr/local/bin/alp
+    owner: "{{ ansible_facts['env']['USER'] }}"
+    group: "{{ ansible_facts['env']['USER'] }}"
+    mode: '0744'
+    backup: true
