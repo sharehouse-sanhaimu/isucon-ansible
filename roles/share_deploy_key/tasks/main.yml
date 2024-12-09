@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/example
+- name: Copy id_ecdsa to user's home directory
+  ansible.builtin.copy:
+    src: files/.ssh/id_ecdsa
+    dest: /{{ ansible_facts['env']['HOME'] }}/.ssh/id_ecdsa
+    owner: "{{ ansible_facts['env']['USER'] }}"
+    group: "{{ ansible_facts['env']['USER'] }}"
+    mode: '0600'
+    backup: true
