@@ -9,6 +9,15 @@
 - Ansible: 11.0.0, https://github.com/ansible/ansible
   - Ansible Core: 2.18.0
 
+## ISUCON周りのバイナリファイル
+
+- alp: 1.0.21
+- pt-query-digest: 3.6.0
+
+## 使えるようになる便利コマンド
+
+- daemonのリストを表示: `list-daemon`
+
 ## Ansible Roleの雛形の作成
 
 ```sh

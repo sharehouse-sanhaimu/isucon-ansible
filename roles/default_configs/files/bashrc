@@ -125,3 +125,4 @@ cdls ()
     \cd "$@" && ls
 }
 alias cd="cdls"
+alias list-daemon="systemctl list-units --type=service --state=running"
