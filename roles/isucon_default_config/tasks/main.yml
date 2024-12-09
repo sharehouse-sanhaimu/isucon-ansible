@@ -7,7 +7,7 @@
     dest: /etc/mysql/mysql.cnf
     owner: "{{ ansible_facts['env']['USER'] }}"
     group: "{{ ansible_facts['env']['USER'] }}"
-    mode: '0644'
+    mode: '0744'
     backup: true
 
 - name: Copy mysqld.cnf to user's home directory
@@ -16,5 +16,14 @@
     dest: /etc/mysql/mysql.conf.d/mysqld.cnf
     owner: "{{ ansible_facts['env']['USER'] }}"
     group: "{{ ansible_facts['env']['USER'] }}"
-    mode: '0644'
+    mode: '0744'
+    backup: true
+
+- name: Copy nginx.cnf to user's home directory
+  ansible.builtin.copy:
+    src: files/etc/nginx/nginx.cnf
+    dest: /etc/nginx/nginx.cnf
+    owner: "{{ ansible_facts['env']['USER'] }}"
+    group: "{{ ansible_facts['env']['USER'] }}"
+    mode: '0744'
     backup: true
