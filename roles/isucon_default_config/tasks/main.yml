@@ -1,0 +1,46 @@
+# SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/example
+- name: Copy mysql.cnf
+  become: true
+  ansible.builtin.copy:
+    src: files/etc/mysql/mysql.cnf
+    dest: /etc/mysql/mysql.cnf
+    owner: "{{ ansible_facts['env']['USER'] }}"
+    group: "{{ ansible_facts['env']['USER'] }}"
+    mode: '0744'
+    backup: true
+
+- name: Copy mysqld.cnf
+  become: true
+  ansible.builtin.copy:
+    src: files/etc/mysql/mysql.conf.d/mysqld.cnf
+    dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+    owner: "{{ ansible_facts['env']['USER'] }}"
+    group: "{{ ansible_facts['env']['USER'] }}"
+    mode: '0744'
+    backup: true
+
+- name: Copy nginx.cnf
+  become: true
+  ansible.builtin.copy:
+    src: files/etc/nginx/nginx.conf
+    dest: /etc/nginx/nginx.conf
+    owner: "{{ ansible_facts['env']['USER'] }}"
+    group: "{{ ansible_facts['env']['USER'] }}"
+    mode: '0744'
+    backup: true
+
+- name: Restart MySQL Service
+  become: true
+  ansible.builtin.systemd:
+    name: mysql
+    state: restarted
+    daemon_reload: true
+
+- name: Restart Nginx Service
+  become: true
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
+    daemon_reload: true
