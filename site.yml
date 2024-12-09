@@ -1,12 +1,4 @@
 ---
-- name: Initialize VM
-  import_playbook: playbooks/init-vm/playbook.yml
-  tags: init-vm
-
-- name: Initialize LXC
-  import_playbook: playbooks/init-lxc/playbook.yml
-  tags: init-lxc
-
 - name: Initialize isucon
   import_playbook: playbooks/init-isucon/playbook.yml
   tags: init-isucon
