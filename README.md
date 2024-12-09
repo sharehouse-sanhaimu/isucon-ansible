@@ -12,6 +12,7 @@
 ## ISUCON周りのバイナリファイル
 
 - alp: 1.0.21
+- pt-query-digest: 3.6.0
 
 ## Ansible Roleの雛形の作成
 
