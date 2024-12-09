@@ -14,6 +14,10 @@
 - alp: 1.0.21
 - pt-query-digest: 3.6.0
 
+## 使えるようになる便利コマンド
+
+- daemonのリストを表示: `list-daemon`
+
 ## Ansible Roleの雛形の作成
 
 ```sh
